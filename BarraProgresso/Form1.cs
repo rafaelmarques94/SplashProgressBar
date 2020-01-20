@@ -17,34 +17,27 @@ namespace BarraProgresso
             InitializeComponent();
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = this.pictureBox1.BackColor;
-            this.TransparencyKey = this.pictureBox1.BackColor;
-
-
+            this.BackColor = this.label1.BackColor;
+            this.TransparencyKey = this.label1.BackColor;
 
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
 
-
             if (progressBar1.Value < 100)
             {
-                progressBar1.Value = progressBar1.Value + 5;
+                progressBar1.Value = progressBar1.Value + 2;
             }
             if (progressBar1.Value == 100)
             {
-                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                Principal frmPrincipal = new Principal();
                 frmPrincipal.Show(); // abre o form principal
                 timer1.Stop();       // para o relógio
                 this.Hide();         //fecha a janela após completar os 100%
             }
 
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ///
-
-
-            if (progressBar1.Value == 20)
+            if (progressBar1.Value == 10)
             {
 
                 System.Uri Url = new System.Uri("http://www.google.com"); //é sempre bom por um site que costuma estar sempre on para testar a conexão
@@ -65,7 +58,6 @@ namespace BarraProgresso
                     this.Dispose(); // encerra o sistema
                 }
             }
-
 
         }
 
